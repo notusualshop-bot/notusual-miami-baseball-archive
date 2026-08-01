@@ -832,12 +832,12 @@ export default function Home() {
 
             {/* 按钮区域 */}
             <div className="flex flex-col space-y-3 items-center">
-              {/* 上方按钮：NEXT CHAPTER IN THE U (绿色刷新) */}
+              {/* 上方按钮：NEXT CHAPTER IN THE U (无图标纯文案) */}
               <button
                 onClick={handleRandomShuffle}
                 className="w-full bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase py-3.5 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
               >
-                NEXT CHAPTER IN THE U ↻
+                NEXT CHAPTER IN THE U
               </button>
 
               {/* 下方按钮：SHARE WITH THE U FAITHFUL (分享/复制链接) */}
