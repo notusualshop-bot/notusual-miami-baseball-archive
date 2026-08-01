@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-// 迈阿密飓风队 100 条终极纯血精炼历史档案数据（已同步您的最新精修文案）
 const miamiArchives = [
   {
     id: 1,
@@ -708,7 +707,13 @@ const miamiArchives = [
 ];
 
 export default function Home() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedArchive, setSelectedArchive] = useState(miamiArchives[0]);
+
+  // 每次进入或刷新网页时，自动随机抽选一条档案呈现（BAMA 原汁原味玩法）
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * miamiArchives.length);
+    setSelectedArchive(miamiArchives[randomIndex]);
+  }, []);
 
   const stadiumImages = [
     "/stadium-1.jpg",
@@ -718,17 +723,7 @@ export default function Home() {
     "/stadium-5.jpg",
     "/stadium-6.jpg",
   ];
-  const randomBg = stadiumImages[currentIndex % stadiumImages.length];
-
-  const currentItem = miamiArchives[currentIndex];
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : miamiArchives.length - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev < miamiArchives.length - 1 ? prev + 1 : 0));
-  };
+  const randomBg = stadiumImages[selectedArchive.id % stadiumImages.length];
 
   return (
     <main className="min-h-screen bg-[#f47321] text-white flex flex-col justify-between selection:bg-white selection:text-[#f47321]">
@@ -745,7 +740,8 @@ export default function Home() {
         }
       `}} />
 
-      <header className="w-full pt-2 pb-1 px-4 text-center">
+      {/* 顶部：经典干净的品牌声明（不显示总数） */}
+      <header className="w-full pt-3 pb-2 px-4 text-center">
         <div className="max-w-md mx-auto space-y-0.5">
           <p className="tracking-[0.3em] uppercase text-[10px] text-white/70 font-light">
             EST. ARCHIVE • THE U
@@ -754,11 +750,12 @@ export default function Home() {
             NOTUSUAL CREATIVE STUDIO
           </p>
           <p className="tracking-[0.2em] uppercase text-xs text-white/70 font-sans font-light">
-            MIAMI HURRICANES FOOTBALL STORY ({currentIndex + 1}/100)
+            MIAMI HURRICANES FOOTBALL STORY
           </p>
         </div>
       </header>
 
+      {/* 中间核心信息区域：错落堆叠大卡片 */}
       <div className="max-w-md sm:max-w-lg mx-auto px-4 pt-1 pb-4 w-full relative">
         <div className="absolute inset-x-4 top-4 bottom-2 bg-stone-300 border-2 border-stone-900 translate-y-3 translate-x-2 pointer-events-none"></div>
         <div className="absolute inset-x-4 top-2 bottom-1 bg-stone-100 border-2 border-stone-900 translate-y-1.5 translate-x-1 pointer-events-none"></div>
@@ -779,49 +776,32 @@ export default function Home() {
 
             <div className="relative z-10 flex flex-col items-center text-center px-4 space-y-1">
               <p className="tracking-[0.15em] uppercase text-[10px] sm:text-xs font-bold text-stone-900 bg-white/90 px-2 py-0.5 border border-stone-900">
-                {currentItem.era}
+                {selectedArchive.era}
               </p>
               <div className="transform -rotate-1 mt-1">
                 <span className="block tracking-tight text-[75px] sm:text-[100px] leading-none text-[#f47321] vintage-number drop-shadow-[0_2px_4px_rgba(255,255,255,0.9)]">
-                  {currentItem.year}
+                  {selectedArchive.year}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="p-6 sm:p-7 bg-white text-center">
+          <div className="p-6 sm:p-8 bg-white text-center">
             <h3 className="text-xl sm:text-2xl font-serif font-extrabold mb-3 leading-snug text-stone-950 tracking-tight">
-              &ldquo;{currentItem.headline}&rdquo;
+              &ldquo;{selectedArchive.headline}&rdquo;
             </h3>
 
-            <p className="text-stone-800 text-xs sm:text-sm leading-relaxed font-serif mb-6 font-medium tracking-wide">
-              &ldquo;{currentItem.body}&rdquo;
+            <p className="text-stone-800 text-xs sm:text-sm leading-relaxed font-serif mb-7 font-medium tracking-wide">
+              &ldquo;{selectedArchive.body}&rdquo;
             </p>
 
-            <div className="flex justify-between items-center mb-5 px-2">
-              <button
-                onClick={handlePrev}
-                className="bg-stone-200 hover:bg-stone-300 text-stone-900 font-serif font-bold text-xs uppercase px-4 py-2 border border-black transition-colors"
-              >
-                ← PREV ARCHIVE
-              </button>
-              <span className="text-xs font-mono font-bold text-stone-600">
-                #{currentItem.id} / 100
-              </span>
-              <button
-                onClick={handleNext}
-                className="bg-[#f47321] hover:bg-[#d85e13] text-white font-serif font-bold text-xs uppercase px-4 py-2 border border-black transition-colors"
-              >
-                NEXT ARCHIVE →
-              </button>
-            </div>
-
+            {/* 按钮已全部替换为迈阿密标志性的经典绿色 #005030 */}
             <div className="flex justify-center">
               <a
                 href="https://www.etsy.com/shop/notusualcreative"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#f47321] hover:bg-[#d85e13] text-white font-serif font-bold tracking-widest text-xs uppercase px-8 py-3.5 transition-all duration-300 text-center inline-block rounded-none border border-black shadow-sm"
+                className="bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase px-8 py-3.5 transition-all duration-300 text-center inline-block rounded-none border border-black shadow-sm"
               >
                 EXPLORE COLLECTION ON ETSY
               </a>
@@ -830,6 +810,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* 底部 */}
       <footer className="w-full bg-[#f47321] pt-6 pb-8 px-4 text-center">
         <div className="max-w-md mx-auto space-y-1.5">
           <p className="font-serif italic text-[10px] tracking-widest text-white/80 uppercase font-bold">
