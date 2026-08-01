@@ -709,11 +709,17 @@ const miamiArchives = [
 export default function Home() {
   const [selectedArchive, setSelectedArchive] = useState(miamiArchives[0]);
 
-  // 每次进入或刷新网页时，自动随机抽选一条档案呈现（BAMA 原汁原味玩法）
+  // 第一次进入页面时随机抽选一条
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * miamiArchives.length);
     setSelectedArchive(miamiArchives[randomIndex]);
   }, []);
+
+  // 点击按钮无限随机刷新（循环推送这 100 条）
+  const handleRandomShuffle = () => {
+    const randomIndex = Math.floor(Math.random() * miamiArchives.length);
+    setSelectedArchive(miamiArchives[randomIndex]);
+  };
 
   const stadiumImages = [
     "/stadium-1.jpg",
@@ -740,7 +746,7 @@ export default function Home() {
         }
       `}} />
 
-      {/* 顶部：经典干净的品牌声明（不显示总数） */}
+      {/* 顶部：经典干净的品牌声明 */}
       <header className="w-full pt-3 pb-2 px-4 text-center">
         <div className="max-w-md mx-auto space-y-0.5">
           <p className="tracking-[0.3em] uppercase text-[10px] text-white/70 font-light">
@@ -795,13 +801,21 @@ export default function Home() {
               &ldquo;{selectedArchive.body}&rdquo;
             </p>
 
-            {/* 按钮已全部替换为迈阿密标志性的经典绿色 #005030 */}
-            <div className="flex justify-center">
+            {/* 绿色刷新按钮：点击无限随机切换下一条档案 */}
+            <div className="flex flex-col space-y-3 items-center">
+              <button
+                onClick={handleRandomShuffle}
+                className="w-full bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase py-3.5 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
+              >
+                SHUFFLE NEXT ARCHIVE ↻
+              </button>
+
+              {/* Etsy 选购外链 */}
               <a
                 href="https://www.etsy.com/shop/notusualcreative"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase px-8 py-3.5 transition-all duration-300 text-center inline-block rounded-none border border-black shadow-sm"
+                className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 font-serif font-bold tracking-widest text-xs uppercase py-3 transition-all duration-300 text-center rounded-none border border-black shadow-sm inline-block"
               >
                 EXPLORE COLLECTION ON ETSY
               </a>
