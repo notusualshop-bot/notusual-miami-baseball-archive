@@ -708,6 +708,7 @@ const miamiArchives = [
 
 export default function Home() {
   const [selectedArchive, setSelectedArchive] = useState(miamiArchives[0]);
+  const [shareButtonText, setShareButtonText] = useState("SHARE WITH THE U FAITHFUL");
 
   // 第一次进入页面时随机抽选一条
   useEffect(() => {
@@ -719,6 +720,34 @@ export default function Home() {
   const handleRandomShuffle = () => {
     const randomIndex = Math.floor(Math.random() * miamiArchives.length);
     setSelectedArchive(miamiArchives[randomIndex]);
+  };
+
+  // 分享功能：优先调用原生分享，降级为复制链接并提示
+  const handleShare = async () => {
+    const shareData = {
+      title: `Miami Hurricanes Football Story: ${selectedArchive.headline}`,
+      text: selectedArchive.body,
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (err) {
+        // 用户取消或不支持时走降级复制
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setShareButtonText("LINK COPIED! SHARE WITH FRIENDS");
+      setTimeout(() => {
+        setShareButtonText("SHARE WITH THE U FAITHFUL");
+      }, 2500);
+    } catch (err) {
+      alert("Share failed, please copy link manually.");
+    }
   };
 
   const stadiumImages = [
@@ -801,24 +830,23 @@ export default function Home() {
               &ldquo;{selectedArchive.body}&rdquo;
             </p>
 
-            {/* 绿色刷新按钮：点击无限随机切换下一条档案 */}
+            {/* 按钮区域 */}
             <div className="flex flex-col space-y-3 items-center">
+              {/* 上方按钮：NEXT CHAPTER IN THE U (绿色刷新) */}
               <button
                 onClick={handleRandomShuffle}
                 className="w-full bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase py-3.5 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
               >
-                SHUFFLE NEXT ARCHIVE ↻
+                NEXT CHAPTER IN THE U ↻
               </button>
 
-              {/* Etsy 选购外链 */}
-              <a
-                href="https://www.etsy.com/shop/notusualcreative"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 font-serif font-bold tracking-widest text-xs uppercase py-3 transition-all duration-300 text-center rounded-none border border-black shadow-sm inline-block"
+              {/* 下方按钮：SHARE WITH THE U FAITHFUL (分享/复制链接) */}
+              <button
+                onClick={handleShare}
+                className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 font-serif font-bold tracking-widest text-xs uppercase py-3 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
               >
-                EXPLORE COLLECTION ON ETSY
-              </a>
+                {shareButtonText}
+              </button>
             </div>
           </div>
         </div>
