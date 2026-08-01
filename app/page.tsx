@@ -710,19 +710,16 @@ export default function Home() {
   const [selectedArchive, setSelectedArchive] = useState(miamiArchives[0]);
   const [shareButtonText, setShareButtonText] = useState("SHARE WITH THE U FAITHFUL");
 
-  // 第一次进入页面时随机抽选一条
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * miamiArchives.length);
     setSelectedArchive(miamiArchives[randomIndex]);
   }, []);
 
-  // 点击按钮无限随机刷新（循环推送这 100 条）
   const handleRandomShuffle = () => {
     const randomIndex = Math.floor(Math.random() * miamiArchives.length);
     setSelectedArchive(miamiArchives[randomIndex]);
   };
 
-  // 分享功能：优先调用原生分享，降级为复制链接并提示
   const handleShare = async () => {
     const shareData = {
       title: `Miami Hurricanes Football Story: ${selectedArchive.headline}`,
@@ -735,7 +732,7 @@ export default function Home() {
         await navigator.share(shareData);
         return;
       } catch (err) {
-        // 用户取消或不支持时走降级复制
+        // Fallback
       }
     }
 
@@ -775,7 +772,6 @@ export default function Home() {
         }
       `}} />
 
-      {/* 顶部：经典干净的品牌声明 */}
       <header className="w-full pt-3 pb-2 px-4 text-center">
         <div className="max-w-md mx-auto space-y-0.5">
           <p className="tracking-[0.3em] uppercase text-[10px] text-white/70 font-light">
@@ -790,7 +786,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 中间核心信息区域：错落堆叠大卡片 */}
       <div className="max-w-md sm:max-w-lg mx-auto px-4 pt-1 pb-4 w-full relative">
         <div className="absolute inset-x-4 top-4 bottom-2 bg-stone-300 border-2 border-stone-900 translate-y-3 translate-x-2 pointer-events-none"></div>
         <div className="absolute inset-x-4 top-2 bottom-1 bg-stone-100 border-2 border-stone-900 translate-y-1.5 translate-x-1 pointer-events-none"></div>
@@ -830,9 +825,7 @@ export default function Home() {
               &ldquo;{selectedArchive.body}&rdquo;
             </p>
 
-            {/* 按钮区域 */}
             <div className="flex flex-col space-y-3 items-center">
-              {/* 上方按钮：NEXT CHAPTER IN THE U (无图标纯文案) */}
               <button
                 onClick={handleRandomShuffle}
                 className="w-full bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase py-3.5 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
@@ -840,7 +833,6 @@ export default function Home() {
                 NEXT CHAPTER IN THE U
               </button>
 
-              {/* 下方按钮：SHARE WITH THE U FAITHFUL (分享/复制链接) */}
               <button
                 onClick={handleShare}
                 className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 font-serif font-bold tracking-widest text-xs uppercase py-3 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
@@ -852,7 +844,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 底部 */}
       <footer className="w-full bg-[#f47321] pt-6 pb-8 px-4 text-center">
         <div className="max-w-md mx-auto space-y-1.5">
           <p className="font-serif italic text-[10px] tracking-widest text-white/80 uppercase font-bold">
@@ -871,9 +862,12 @@ export default function Home() {
               VISIT OUR ETSY SHOP
             </a>
           </div>
-          <div className="pt-2 border-t border-white/10">
+          <div className="pt-2 border-t border-white/10 space-y-1">
             <p className="text-[9px] tracking-widest uppercase text-white/50 font-semibold">
               © NOTUSUAL HURRICANES ARCHIVE
+            </p>
+            <p className="text-[8px] tracking-wider uppercase text-white/40 font-light">
+              Independent studio. Not affiliated with the University of Miami.
             </p>
           </div>
         </div>
