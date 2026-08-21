@@ -785,7 +785,7 @@ const miamiBaseballStories = [
     year: "Rituals",
     era: "FINAL OUT",
     headline: "Standing for the Final Out",
-    story: "The Hurricanes are one out away from securing a victory, many fans rise, clapping in unison to a steady, rhythmic beat as the closer stares down the final batter. It is a moment of collective anticipation that sends chills down the spine of the opposition. The fans demand to be physically involved in the final act of the game, standing shoulder-to-shoulder to witness the official raising of the victory flag.",
+    story: "When the Hurricanes are one out away from securing a victory, many fans rise, clapping in unison to a steady, rhythmic beat as the closer stares down the final batter. It is a moment of collective anticipation that sends chills down the spine of the opposition. The fans demand to be physically involved in the final act of the game, standing shoulder-to-shoulder to witness the official raising of the victory flag.",
     legacy: "The fans don't just watch the final out; they stand up and demand it."
   },
   {
@@ -807,17 +807,38 @@ const miamiBaseballStories = [
 ];
 
 export default function Home() {
+  const stadiumImages = [
+    "/stadium-1.jpg",
+    "/stadium-2.jpg",
+    "/stadium-3.jpg",
+    "/stadium-4.jpg",
+    "/stadium-5.jpg",
+    "/stadium-6.jpg",
+  ];
+
   const [selectedArchive, setSelectedArchive] = useState(miamiBaseballStories[0]);
+  const [currentBg, setCurrentBg] = useState(stadiumImages[0]);
   const [shareButtonText, setShareButtonText] = useState("SHARE WITH THE U FAITHFUL");
 
+  // 初始加载时随机抽一章并随机配一张不同的背景图
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * miamiBaseballStories.length);
-    setSelectedArchive(miamiBaseballStories[randomIndex]);
+    const randomStoryIndex = Math.floor(Math.random() * miamiBaseballStories.length);
+    setSelectedArchive(miamiBaseballStories[randomStoryIndex]);
+
+    const randomBgIndex = Math.floor(Math.random() * stadiumImages.length);
+    setCurrentBg(stadiumImages[randomBgIndex]);
   }, []);
 
+  // 点击“Next Chapter”时：切换故事，并强制换一张“和当前不同的”背景图
   const handleRandomShuffle = () => {
-    const randomIndex = Math.floor(Math.random() * miamiBaseballStories.length);
-    setSelectedArchive(miamiBaseballStories[randomIndex]);
+    // 随机切一个新故事
+    const randomStoryIndex = Math.floor(Math.random() * miamiBaseballStories.length);
+    setSelectedArchive(miamiBaseballStories[randomStoryIndex]);
+
+    // 过滤掉当前正在显示的背景图，确保每次点击背景图一定会变！
+    const availableImages = stadiumImages.filter((img) => img !== currentBg);
+    const newBg = availableImages[Math.floor(Math.random() * availableImages.length)];
+    setCurrentBg(newBg);
   };
 
   const handleShare = async () => {
@@ -847,18 +868,6 @@ export default function Home() {
     }
   };
 
-  // 棒球元素的背景图路径（直接匹配你现有的 stadium 图片）
-  const baseballImages = [
-    "/stadium-1.jpg",
-    "/stadium-2.jpg",
-    "/stadium-3.jpg",
-    "/stadium-4.jpg",
-    "/stadium-5.jpg",
-    "/stadium-6.jpg",
-  ];
-  // 每次点击或刷新时完全随机获取一张
-  const randomBg = baseballImages[Math.floor(Math.random() * baseballImages.length)];
-  
   return (
     <main className="min-h-screen bg-[#f47321] text-white flex flex-col justify-between selection:bg-white selection:text-[#f47321]">
       <style dangerouslySetInnerHTML={{ __html: `
@@ -896,15 +905,10 @@ export default function Home() {
           <div className="relative w-full h-[300px] flex flex-col items-center justify-center overflow-hidden border-b-2 border-stone-900 px-4">
             <div className="absolute inset-0 z-0 grayscale contrast-150 brightness-90">
               <Image
-                src={randomBg}
+                src={currentBg}
                 alt="Miami Baseball Archive Background"
                 fill
                 className="object-cover object-center"
-                onError={(e) => {
-                  // 如果未找到 baseball 图片，自动回退到默认背景图，防止页面报错
-                  const target = e.target as HTMLImageElement;
-                  target.src = "/stadium-1.jpg";
-                }}
                 priority
               />
             </div>
@@ -932,7 +936,6 @@ export default function Home() {
               &ldquo;{selectedArchive.story}&rdquo;
             </p>
 
-            {/* 放大且加粗的 Legacy 区域，使其更加醒目和具有金句质感 */}
             <p className="text-stone-950 text-sm sm:text-base leading-relaxed font-serif font-bold italic mb-7 border-t border-b border-stone-200 py-3 bg-stone-50">
               &ldquo;{selectedArchive.legacy}&rdquo;
             </p>
