@@ -7,7 +7,7 @@ const miamiBaseballStories = [
   {
     id: "01",
     year: "1962–1963",
-    era: "1962–1963 ERA",
+    era: "1962–1963 CHRONICLE",
     headline: "The Day Miami Baseball Changed Forever",
     story: "Before 1963, Miami baseball was a forgotten program playing in the shadows of bigger names. They had limited resources, no national reputation, and little recognition outside South Florida. Playing on a dusty local field, the team was completely off the national radar. Nobody believed this program could survive, let alone thrive. Then, the university took a desperate gamble on a relentless young coach named Ron Fraser. He didn't just save Miami baseball from extinction; he ignited a cultural revolution. He brought an unmatched intensity that would eventually turn a club-level team into one of the most recognizable and feared programs in college baseball.",
     legacy: "Miami baseball wasn't born with a silver spoon; it was built from the dirt up by people who refused to lose."
@@ -15,7 +15,7 @@ const miamiBaseballStories = [
   {
     id: "02",
     year: "1963",
-    era: "1963 SEASON",
+    era: "1963 CHRONICLE",
     headline: "The Man Who Built The Storm",
     story: "When Ron Fraser stepped onto the Coral Gables campus, he inherited a program with zero funding and zero respect. But Fraser didn't just want to coach a team—he wanted to build a spectacle. Using relentless determination and creativity, he put Miami on the map. Fraser personally fought for every resource the program needed, from equipment to fan support. He promoted the program everywhere he could and convinced local businesses to invest in a wildly ambitious dream. Through sheer force of will, he constructed the foundation of a baseball dynasty, establishing a ruthless, winning culture that would soon terrify traditional powerhouses.",
     legacy: "Ron Fraser didn't just build a team; he created the entire identity and swagger of Miami baseball."
@@ -23,7 +23,7 @@ const miamiBaseballStories = [
   {
     id: "03",
     year: "1970s",
-    era: "1970S ERA",
+    era: "1970S CHRONICLE",
     headline: "The Wizard of Coral Gables",
     story: "Long before the rest of the country figured out how to market college baseball, Miami was putting on a nightly circus in South Florida. Earning the nickname 'The Wizard of College Baseball,' Ron Fraser transformed Hurricanes games into must-see entertainment. He introduced the legendary Miami Maniac mascot, hosted wild promotional events like 'Dinner on the Diamond,' and turned a simple collegiate game into a massive local party. This wasn't just a gimmick; it was psychological warfare. By blending elite, high-speed baseball with pure Miami showmanship, the Hurricanes made Coral Gables one of the most intimidating places to play.",
     legacy: "Miami proved that college baseball didn’t have to be quiet and traditional—it could be loud, flashy, and undeniable."
@@ -31,7 +31,7 @@ const miamiBaseballStories = [
   {
     id: "04",
     year: "1974",
-    era: "1974 SEASON",
+    era: "1974 CHRONICLE",
     headline: "The Night Miami Arrived In Omaha",
     story: "By the early 1970s, the Hurricanes were no longer just a local attraction trying to survive. They were a rising force ready to shock the establishment. In 1974, Miami did the unthinkable: a southern school with little national baseball tradition battered its way to the College World Series. This wasn't a team built on quiet tradition. They were loud, fast, and fiercely competitive, carrying the unmistakable swagger of their city. When they arrived in Omaha, the traditional blue-bloods of college baseball were stunned. The Hurricanes didn't just show up to participate; they arrived to take over, officially announcing the birth of a new national power.",
     legacy: "The 1974 season was the moment Miami baseball kicked down the door and demanded the respect of the entire country."
@@ -39,7 +39,7 @@ const miamiBaseballStories = [
   {
     id: "05",
     year: "1970s–1980s",
-    era: "PIPELINE ERA",
+    era: "1970S-80S CHRONICLE",
     headline: "The Backyard That Built A Dynasty",
     story: "The ultimate secret weapon behind the Miami baseball empire wasn't just tactics—it was the untamed, raw talent in their own backyard. Recognizing that South Florida was a goldmine for elite prospects, the Hurricanes built one of the strongest local pipelines in college baseball. Instead of losing highly touted local prodigies to established northern schools, Miami convinced the best athletes to stay home and build a legacy for their own city. This pipeline injected the roster with unmatched speed, power, and attitude. It forged a brotherhood of local kids who played with a massive chip on their shoulder and a deep pride in 'The U.'",
     legacy: "The greatest strength of Miami baseball has always been the fierce, homegrown talent of South Florida."
@@ -47,7 +47,7 @@ const miamiBaseballStories = [
   {
     id: "06",
     year: "Mid-1970s",
-    era: "SWAGGER ERA",
+    era: "SPECIAL REPORT",
     headline: "The Birth of the Miami Swagger",
     story: "The infamous Miami swagger didn't just appear overnight. Baseball helped create the attitude that would later define Miami sports. Dressed in vibrant orange and green, the Hurricanes played with a loud, aggressive style that defied the country-club etiquette of traditional baseball. They stole bases relentlessly, celebrated massive hits with unfiltered emotion, and turned every game into a fiercely competitive battle. This unapologetic attitude made them the villains of college baseball to outsiders, but absolute heroes to the people of South Florida.",
     legacy: "The Hurricanes didn't just play the game; they permanently changed how it looked, sounded, and felt."
@@ -55,7 +55,7 @@ const miamiBaseballStories = [
   {
     id: "07",
     year: "1973",
-    era: "1973 STADIUM",
+    era: "STADIUM CHRONICLE",
     headline: "The House That Orange and Green Built",
     story: "A championship team needs a fortress. In 1973, through relentless fundraising and community support, a basic local field was transformed into Mark Light Stadium. But it wasn't built like a normal college ballpark. The design brought the seats incredibly close to the action. The dugouts were tight, the crowd was right on top of the players, and the atmosphere was deafening. It became a terrifying snake pit for visiting opponents and the ultimate weekend party for Miami locals.",
     legacy: "Mark Light Field wasn't just a stadium; it became the beating heart and the loudest weapon of the Coral Gables community."
@@ -63,7 +63,7 @@ const miamiBaseballStories = [
   {
     id: "08",
     year: "Late 1970s",
-    era: "REBEL ERA",
+    era: "CHRONICLE FEATURE",
     headline: "Embracing the Villain Role",
     story: "As Miami’s dominance grew, so did the target on their backs. The college baseball establishment—built on quiet tradition and unspoken rules—didn't know how to handle the Hurricanes. Miami players wore their emotions on their sleeves and played with an aggressive, emotional style that infuriated purists. Opposing fans ruthlessly booed them, and rival coaches despised their theatrics. But the hatred only fueled the storm. Instead of apologizing, Miami embraced the villain role, using the hostility of road crowds as pure motivation to completely dismantle their opponents.",
     legacy: "They didn't care if the rest of the country hated them, just as long as everybody feared them."
@@ -71,7 +71,7 @@ const miamiBaseballStories = [
   {
     id: "09",
     year: "1970s–1980s",
-    era: "CULTURE ERA",
+    era: "CULTURE CHRONICLE",
     headline: "The Secret Behind the Winning Culture",
     story: "What made Miami baseball truly unstoppable wasn't just the raw talent; it was the brutal internal accountability. In Coral Gables, the standard was different. Players weren't just preparing to win games; they were preparing to carry the weight of 'The U.' Practices were notoriously harder than actual games. Upperclassmen pushed freshmen to their absolute breaking points. If you couldn't handle the pressure of your own teammates, you had no chance of surviving the blinding spotlight of Omaha. This iron-sharpens-iron mentality created a locker room where losing was never just disappointing—it was completely unacceptable.",
     legacy: "The true battle wasn't against the opponent; it was meeting the uncompromising, daily standard of 'The U.'"
@@ -79,7 +79,7 @@ const miamiBaseballStories = [
   {
     id: "10",
     year: "1978",
-    era: "1978 SEASON",
+    era: "1978 CHRONICLE",
     headline: "The Storm Demands Respect",
     story: "By the late 1970s, the Hurricanes were consistently knocking on the door of a national championship. The national narrative rapidly shifted from 'Miami is a flashy underdog' to 'Miami is a legitimate monster.' They began routinely defeating established titans, proving their high-octane style could win on the biggest stages. The media and rival programs could no longer dismiss their antics as mere showmanship. The foundation of the empire had been poured, dried, and tested in battle. The Hurricanes forced the baseball establishment to respect the storm, setting the stage for the championship era that would follow.",
     legacy: "The Hurricanes forced the rest of the country to accept that they were here to stay."
@@ -87,7 +87,7 @@ const miamiBaseballStories = [
   {
     id: "11",
     year: "1982",
-    era: "1982 CHAMPIONSHIP",
+    era: "CHAMPIONSHIP EDITION",
     headline: "The Miracle That Started Everything",
     story: "Miami arrived in Omaha for the 1982 College World Series not as the heavy favorites, but as a team of destiny. For years, the Hurricanes had knocked on the door of greatness, only to be turned away. But this time, they refused to be denied. Playing with their signature South Florida swagger, disciplined defense, and fearless baseball, they battled through a grueling bracket to capture the program's first National Championship. It validated everything coach Ron Fraser had built. It wasn't just a trophy; it was undeniable proof that the loud, aggressive kids from Coral Gables could conquer the college baseball world.",
     legacy: "The 1982 championship changed Miami from a regional powerhouse into college baseball royalty."
@@ -95,7 +95,7 @@ const miamiBaseballStories = [
   {
     id: "12",
     year: "1985",
-    era: "1985 CWS",
+    era: "DYNASTY CHRONICLE",
     headline: "Proving It Was No Accident",
     story: "Winning one national title could be called a miracle, but winning two creates a dynasty. In 1985, the Hurricanes returned to Omaha with a massive target on their backs. Showcasing their absolute resilience, they battled through Omaha against the nation's best teams. They didn't blink under the pressure. Instead, they secured their second national crown. This run cemented Miami’s status as a relentless powerhouse that could perform when the lights were the brightest.",
     legacy: "The 1985 title proved to the entire country that the Miami storm was here to stay."
@@ -103,7 +103,7 @@ const miamiBaseballStories = [
   {
     id: "13",
     year: "1999",
-    era: "1999 TITLE",
+    era: "1999 CHRONICLE",
     headline: "The Return of the Hurricanes",
     story: "By the late 1990s, some critics wondered if Miami’s golden era had quietly passed. In 1999, a new generation of Hurricanes silenced those doubters. Playing with the classic, aggressive style that defined the program's roots, they stormed through the postseason and brought the national championship trophy back to Coral Gables. It was a deeply emotional victory for the fanbase, proving that the winning culture wasn't tied to a specific decade—it was embedded in the jersey.",
     legacy: "The 1999 championship proved that the fierce Hurricane spirit could be passed down to a new generation."
@@ -111,7 +111,7 @@ const miamiBaseballStories = [
   {
     id: "14",
     year: "2001",
-    era: "2001 DYNASTY",
+    era: "LEGENDARY TEAM",
     headline: "The Greatest Hurricane Team Ever Built",
     story: "The 2001 Miami Hurricanes didn't just win a national championship; they completely overwhelmed the competition. Armed with a roster packed with future major leaguers, this team was practically untouchable. They dismantled opponents with an explosive offense and suffocating pitching, leaving no doubt about who owned college baseball. Playing with an unbelievable level of confidence, they marched through Omaha and claimed the program's fourth national title. To this day, the 2001 squad is widely considered one of the most dominant teams in the history of the sport.",
     legacy: "The 2001 team set a standard that future Hurricanes would chase forever."
@@ -119,7 +119,7 @@ const miamiBaseballStories = [
   {
     id: "15",
     year: "Tradition",
-    era: "STADIUM RITUAL",
+    era: "BALLPARK CHRONICLE",
     headline: "The Shake That Became A Tradition",
     story: "You can’t talk about Miami baseball without talking about the famous Mark Light Shake. What started as a simple ballpark concession evolved into a sacred game-day ritual. For generations of Hurricanes fans, waiting in line for this legendary milkshake is as important as the first pitch. It’s a taste of a South Florida childhood and a staple of the Coral Gables experience. In a sport obsessed with traditions, this sweet treat became the ultimate symbol of a Miami baseball weekend.",
     legacy: "Some stadiums have hot dogs; Mark Light Field has a milkshake that defines an entire community."
@@ -127,7 +127,7 @@ const miamiBaseballStories = [
   {
     id: "16",
     year: "Rivalry",
-    era: "STATE WAR",
+    era: "STATE WAR CHRONICLE",
     headline: "Bad Blood: The Florida State War",
     story: "In the state of Florida, orange and green violently clashes with garnet and gold. The rivalry between Miami and Florida State isn’t just a game; it’s a turf war. For decades, these two programs have battled for in-state supremacy and national titles on the diamond. The games are defined by intense rivalries, unforgettable moments, and nonstop pressure. It doesn't matter what the rankings are when these two meet—it's always a heavyweight fight where pride means everything.",
     legacy: "You aren't a true Hurricane until you’ve experienced the absolute intensity of the Florida State rivalry."
@@ -151,7 +151,7 @@ const miamiBaseballStories = [
   {
     id: "19",
     year: "Atmosphere",
-    era: "FRIDAY NIGHTS",
+    era: "FRIDAY CHRONICLE",
     headline: "The Magic of Friday Nights",
     story: "There is nothing in college sports quite like a Friday night in Coral Gables. As the South Florida sun sets over Mark Light Field, the smell of barbecue fills the air, fans line up for their Mark Light Shakes, and a sea of orange and green fills the stands. It’s more than a baseball game; it’s a weekly family reunion for the Miami faithful. The energy is electric, the crowd is right on top of the action, and the home-field advantage is absolute. Under those lights, the Hurricanes become invincible.",
     legacy: "Friday nights in Coral Gables aren't just games—they are the heartbeat of the Miami community."
@@ -159,7 +159,7 @@ const miamiBaseballStories = [
   {
     id: "20",
     year: "Legacy",
-    era: "THE ENDURING LEGACY",
+    era: "CHRONICLE ARCHIVE",
     headline: "The Eternal Spirit of Miami Baseball",
     story: "Championships are won and lost, and rosters change every year, but the spirit of Miami baseball remains unbroken. It lives in the bright orange and green jerseys, the deafening roar of the hometown crowd, and the unwavering confidence of every player who steps onto the diamond. From their scrappy, underfunded beginnings to their reign as national champions, the Hurricanes have always played for more than just a trophy. They play for the fierce pride of 'The U.'",
     legacy: "As long as there is baseball in South Florida, the storm will never die."
@@ -167,7 +167,7 @@ const miamiBaseballStories = [
   {
     id: "21",
     year: "1994",
-    era: "1994 SEASON",
+    era: "1994 CHRONICLE",
     headline: "Taking the Torch",
     story: "Following a legendary coach is supposed to be the hardest job in sports. When Jim Morris took over the Miami program in 1994, he didn't just inherit a team; he inherited the crushing weight of massive expectations. Fans didn't just want winning seasons; they demanded trips to Omaha. Instead of shrinking under the pressure, Morris embraced it. He seamlessly kept the Hurricanes' aggressive swagger alive while instilling his own relentless discipline. He didn't just maintain the empire; he elevated it, guiding the team to two more national championships and proving that the winning culture in Coral Gables was built to last.",
     legacy: "The true mark of a dynasty is surviving a change in leadership without ever losing its soul."
@@ -820,9 +820,6 @@ export default function Home() {
   const [currentBg, setCurrentBg] = useState(stadiumImages[0]);
   const [shareButtonText, setShareButtonText] = useState("SHARE WITH THE U FAITHFUL");
 
-  // 1950年代复古棒球卡（Topps / Bowman Vintage Baseball Card）UI 风格 DEMO
-  // 核心视觉：顶部档案铭牌、复古卡纸双层边框、质感沉稳的高级收藏卡牌体验
-
   useEffect(() => {
     const randomStoryIndex = Math.floor(Math.random() * miamiBaseballStories.length);
     setSelectedArchive(miamiBaseballStories[randomStoryIndex]);
@@ -835,7 +832,6 @@ export default function Home() {
     const randomStoryIndex = Math.floor(Math.random() * miamiBaseballStories.length);
     setSelectedArchive(miamiBaseballStories[randomStoryIndex]);
 
-    // 排除当前的背景图，确保每次点击背景图一定会随机切换成另一张
     const availableImages = stadiumImages.filter((img) => img !== currentBg);
     const newBg = availableImages[Math.floor(Math.random() * availableImages.length)];
     setCurrentBg(newBg);
@@ -878,21 +874,24 @@ export default function Home() {
           font-style: normal;
           font-display: swap;
         }
-        .vintage-number {
-          font-family: 'AlfaSlabOne', Impact, sans-serif;
+        .vintage-newspaper {
+          background-color: #f7f3e9;
+          background-image: radial-gradient(#d6c7b2 0.75px, transparent 0.75px);
+          background-size: 15px 15px;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), inset 0 0 25px rgba(180, 160, 130, 0.25);
+          border: 4px double #1c1917;
         }
-        /* 1950年代复古棒球卡微黄卡纸材质底纹 */
-        .vintage-card-border {
-          background-color: #fbf9f1;
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(210, 190, 150, 0.3);
+        .newspaper-headline {
+          font-family: Georgia, serif;
+          letter-spacing: -0.02em;
         }
       `}} />
 
-      {/* 顶部标题栏 */}
+      {/* 顶部报头栏 */}
       <header className="w-full pt-4 pb-2 px-4 text-center">
         <div className="max-w-md mx-auto space-y-1">
           <p className="tracking-[0.3em] uppercase text-[10px] text-white/80 font-light">
-            EST. ARCHIVE • BASEBALL LEGACY
+            THE DAILY CHRONICLE • SOUTH FLORIDA EDITION
           </p>
           <p className="tracking-[0.25em] uppercase text-xs text-white/95 font-medium">
             NOTUSUAL CREATIVE STUDIO
@@ -903,26 +902,27 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 收藏卡风格容器：模拟复古球星卡边框 */}
+      {/* 报纸风格核心容器 */}
       <div className="max-w-md sm:max-w-lg mx-auto px-4 pt-2 pb-6 w-full relative">
         <div className="absolute inset-x-4 top-6 bottom-2 bg-stone-300 border-2 border-stone-900 translate-y-3 translate-x-2 pointer-events-none"></div>
         <div className="absolute inset-x-4 top-4 bottom-1 bg-stone-100 border-2 border-stone-900 translate-y-1.5 translate-x-1 pointer-events-none"></div>
 
-        {/* 核心卡片容器：采用复古球星卡米黄底色 */}
-        <div className="relative vintage-card-border text-stone-950 overflow-hidden border-3 border-stone-900 rounded-none">
+        {/* 核心卡片容器：复古报纸头条质感 */}
+        <div className="relative vintage-newspaper text-stone-950 overflow-hidden rounded-none p-2 sm:p-4">
           
-          {/* 顶部的复古棒球卡专属铭牌条（Nameplate Bar） */}
-          <div className="bg-stone-900 text-stone-100 px-4 py-2 flex justify-between items-center border-b-2 border-stone-900">
-            <span className="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-amber-400">
-              COLLECTOR EDITION # {selectedArchive.id}
-            </span>
-            <span className="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-white/80">
-              ARCHIVE SERIES
-            </span>
+          {/* 报纸副标与双线分隔符 */}
+          <div className="border-b-2 border-stone-900 pb-2 mb-3 text-center">
+            <div className="flex justify-between items-center text-[9px] font-mono tracking-widest text-stone-600 uppercase border-b border-stone-900 pb-1 mb-1">
+              <span>SPECIAL ARCHIVE EDITION</span>
+              <span>VOL. {selectedArchive.id} • NO. 305</span>
+            </div>
+            <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-stone-900">
+              {selectedArchive.era}
+            </p>
           </div>
 
           {/* 图片展示区 */}
-          <div className="relative w-full h-[280px] flex flex-col items-center justify-center overflow-hidden border-b-2 border-stone-900 px-4">
+          <div className="relative w-full h-[260px] flex flex-col items-center justify-center overflow-hidden border-2 border-stone-900 mb-4 px-4">
             <div className="absolute inset-0 z-0 grayscale contrast-150 brightness-90">
               <Image
                 src={currentBg}
@@ -933,46 +933,46 @@ export default function Home() {
               />
             </div>
             
-            <div className="absolute inset-0 z-1 bg-black/25"></div>
+            <div className="absolute inset-0 z-1 bg-black/20"></div>
 
-            <div className="relative z-10 flex flex-col items-center text-center space-y-2 w-full">
-              <p className="tracking-[0.15em] uppercase text-[10px] sm:text-xs font-bold text-stone-900 bg-amber-100/95 px-3 py-1 border border-stone-900 shadow-sm">
-                {selectedArchive.era}
-              </p>
+            <div className="relative z-10 flex flex-col items-center text-center space-y-1 w-full">
               <div className="transform -rotate-1 w-full px-2">
-                <span className="block tracking-tight text-[36px] sm:text-[46px] leading-tight text-amber-500 vintage-number drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] break-words">
+                <span className="block tracking-tight text-[55px] sm:text-[65px] leading-none text-white vintage-number drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)]">
                   {selectedArchive.year}
                 </span>
               </div>
             </div>
           </div>
 
-          {/* 文本故事与金句区 */}
-          <div className="p-6 sm:p-8 text-center">
-            <h3 className="text-xl sm:text-2xl font-serif font-extrabold mb-3 leading-snug text-stone-950 tracking-tight">
+          {/* 报纸头条与正文区 */}
+          <div className="text-center px-2 pb-2">
+            <h3 className="text-xl sm:text-2xl newspaper-headline font-black mb-3 leading-tight text-stone-950">
               &ldquo;{selectedArchive.headline}&rdquo;
             </h3>
 
-            <p className="text-stone-800 text-xs sm:text-sm leading-relaxed font-serif mb-4 font-medium tracking-wide">
+            {/* 报纸式双线装饰 */}
+            <div className="w-16 h-0.5 bg-stone-900 mx-auto mb-3"></div>
+
+            <p className="text-stone-900 text-xs sm:text-sm leading-relaxed font-serif mb-4 text-justify tracking-wide px-1">
               &ldquo;{selectedArchive.story}&rdquo;
             </p>
 
-            {/* 醒目的 Legacy 金句展示框 */}
-            <p className="text-stone-950 text-sm sm:text-base leading-relaxed font-serif font-bold italic mb-7 border-t border-b border-stone-300 py-3 bg-amber-50/60">
+            {/* 醒目的 Legacy 金句展示框（报纸社论风格） */}
+            <p className="text-stone-950 text-xs sm:text-sm leading-relaxed font-serif font-bold italic mb-6 border-t border-b border-stone-900 py-2.5 bg-stone-200/50">
               &ldquo;{selectedArchive.legacy}&rdquo;
             </p>
 
-            <div className="flex flex-col space-y-3 items-center">
+            <div className="flex flex-col space-y-2.5 items-center">
               <button
                 onClick={handleRandomShuffle}
-                className="w-full bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase py-3.5 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
+                className="w-full bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase py-3.5 transition-all duration-300 text-center rounded-none border border-stone-900 shadow-sm cursor-pointer"
               >
-                DRAW NEXT BASEBALL CHAPTER
+                READ NEXT HEADLINE CHAPTER
               </button>
 
               <button
                 onClick={handleShare}
-                className="w-full bg-stone-200 hover:bg-stone-300 text-stone-900 font-serif font-bold tracking-widest text-xs uppercase py-3 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
+                className="w-full bg-stone-300 hover:bg-stone-400 text-stone-900 font-serif font-bold tracking-widest text-xs uppercase py-3 transition-all duration-300 text-center rounded-none border border-stone-900 shadow-sm cursor-pointer"
               >
                 {shareButtonText}
               </button>
