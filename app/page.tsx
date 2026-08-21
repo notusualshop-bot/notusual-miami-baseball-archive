@@ -847,17 +847,18 @@ export default function Home() {
     }
   };
 
-  // 棒球元素的背景图路径（你可以将你的棒球插画图片放入 public 文件夹并命名为 baseball-1.jpg 到 baseball-6.jpg）
+  // 棒球元素的背景图路径（直接匹配你现有的 stadium 图片）
   const baseballImages = [
-    "/baseball-1.jpg",
-    "/baseball-2.jpg",
-    "/baseball-3.jpg",
-    "/baseball-4.jpg",
-    "/baseball-5.jpg",
-    "/baseball-6.jpg",
+    "/stadium-1.jpg",
+    "/stadium-2.jpg",
+    "/stadium-3.jpg",
+    "/stadium-4.jpg",
+    "/stadium-5.jpg",
+    "/stadium-6.jpg",
   ];
-  const randomBg = baseballImages[Number(selectedArchive.id) % baseballImages.length];
-
+  // 每次点击或刷新时完全随机获取一张
+  const randomBg = baseballImages[Math.floor(Math.random() * baseballImages.length)];
+  
   return (
     <main className="min-h-screen bg-[#f47321] text-white flex flex-col justify-between selection:bg-white selection:text-[#f47321]">
       <style dangerouslySetInnerHTML={{ __html: `
