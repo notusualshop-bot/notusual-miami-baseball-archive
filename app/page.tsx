@@ -199,8 +199,8 @@ const miamiBaseballStories = [
   {
     id: "25",
     year: "Rivalry Era",
-    headline: "The Battle for the Sunshine State",
     era: "SUNSHINE STATE",
+    headline: "The Battle for the Sunshine State",
     story: "Florida State isn't the only team that makes Miami's blood boil. The rivalry with the Florida Gators is a brutal fight for state supremacy. It is a clash of two entirely different cultures: the flashy, aggressive city swagger of Coral Gables versus the traditional, college-town pride of Gainesville. When these two teams meet on the diamond, the intensity rivals a College World Series final. The dugouts are loud, every pitch carries extra pressure, and every single out is violently contested. In the Sunshine State, bragging rights are everything.",
     legacy: "Beating the Gators isn't just another win on the schedule; it's a matter of absolute South Florida pride."
   },
@@ -785,7 +785,7 @@ const miamiBaseballStories = [
     year: "Rituals",
     era: "FINAL OUT",
     headline: "Standing for the Final Out",
-    story: "When the Hurricanes are one out away from securing a victory, many fans rise, clapping in unison to a steady, rhythmic beat as the closer stares down the final batter. It is a moment of collective anticipation that sends chills down the spine of the opposition. The fans demand to be physically involved in the final act of the game, standing shoulder-to-shoulder to witness the official raising of the victory flag.",
+    story: "The Hurricanes are one out away from securing a victory, many fans rise, clapping in unison to a steady, rhythmic beat as the closer stares down the final batter. It is a moment of collective anticipation that sends chills down the spine of the opposition. The fans demand to be physically involved in the final act of the game, standing shoulder-to-shoulder to witness the official raising of the victory flag.",
     legacy: "The fans don't just watch the final out; they stand up and demand it."
   },
   {
@@ -847,15 +847,16 @@ export default function Home() {
     }
   };
 
-  const stadiumImages = [
-    "/stadium-1.jpg",
-    "/stadium-2.jpg",
-    "/stadium-3.jpg",
-    "/stadium-4.jpg",
-    "/stadium-5.jpg",
-    "/stadium-6.jpg",
+  // 棒球元素的背景图路径（你可以将你的棒球插画图片放入 public 文件夹并命名为 baseball-1.jpg 到 baseball-6.jpg）
+  const baseballImages = [
+    "/baseball-1.jpg",
+    "/baseball-2.jpg",
+    "/baseball-3.jpg",
+    "/baseball-4.jpg",
+    "/baseball-5.jpg",
+    "/baseball-6.jpg",
   ];
-  const randomBg = stadiumImages[Number(selectedArchive.id) % stadiumImages.length];
+  const randomBg = baseballImages[Number(selectedArchive.id) % baseballImages.length];
 
   return (
     <main className="min-h-screen bg-[#f47321] text-white flex flex-col justify-between selection:bg-white selection:text-[#f47321]">
@@ -895,9 +896,14 @@ export default function Home() {
             <div className="absolute inset-0 z-0 grayscale contrast-150 brightness-90">
               <Image
                 src={randomBg}
-                alt="Stadium Archive Background"
+                alt="Miami Baseball Archive Background"
                 fill
                 className="object-cover object-center"
+                onError={(e) => {
+                  // 如果未找到 baseball 图片，自动回退到默认背景图，防止页面报错
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/stadium-1.jpg";
+                }}
                 priority
               />
             </div>
@@ -921,11 +927,12 @@ export default function Home() {
               &ldquo;{selectedArchive.headline}&rdquo;
             </h3>
 
-            <p className="text-stone-800 text-xs sm:text-sm leading-relaxed font-serif mb-3 font-medium tracking-wide">
+            <p className="text-stone-800 text-xs sm:text-sm leading-relaxed font-serif mb-4 font-medium tracking-wide">
               &ldquo;{selectedArchive.story}&rdquo;
             </p>
 
-            <p className="text-stone-600 text-[11px] sm:text-xs leading-relaxed font-serif italic mb-7">
+            {/* 放大且加粗的 Legacy 区域，使其更加醒目和具有金句质感 */}
+            <p className="text-stone-950 text-sm sm:text-base leading-relaxed font-serif font-bold italic mb-7 border-t border-b border-stone-200 py-3 bg-stone-50">
               &ldquo;{selectedArchive.legacy}&rdquo;
             </p>
 
