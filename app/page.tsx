@@ -820,7 +820,9 @@ export default function Home() {
   const [currentBg, setCurrentBg] = useState(stadiumImages[0]);
   const [shareButtonText, setShareButtonText] = useState("SHARE WITH THE U FAITHFUL");
 
-  // 初始加载时随机抽一章并随机配一张不同的背景图
+  // 1950年代复古棒球卡（Topps / Bowman Vintage Baseball Card）UI 风格 DEMO
+  // 核心视觉：顶部档案铭牌、复古卡纸双层边框、质感沉稳的高级收藏卡牌体验
+
   useEffect(() => {
     const randomStoryIndex = Math.floor(Math.random() * miamiBaseballStories.length);
     setSelectedArchive(miamiBaseballStories[randomStoryIndex]);
@@ -829,13 +831,11 @@ export default function Home() {
     setCurrentBg(stadiumImages[randomBgIndex]);
   }, []);
 
-  // 点击“Next Chapter”时：切换故事，并强制换一张“和当前不同的”背景图
   const handleRandomShuffle = () => {
-    // 随机切一个新故事
     const randomStoryIndex = Math.floor(Math.random() * miamiBaseballStories.length);
     setSelectedArchive(miamiBaseballStories[randomStoryIndex]);
 
-    // 过滤掉当前正在显示的背景图，确保每次点击背景图一定会变！
+    // 排除当前的背景图，确保每次点击背景图一定会随机切换成另一张
     const availableImages = stadiumImages.filter((img) => img !== currentBg);
     const newBg = availableImages[Math.floor(Math.random() * availableImages.length)];
     setCurrentBg(newBg);
@@ -881,8 +881,14 @@ export default function Home() {
         .vintage-number {
           font-family: 'AlfaSlabOne', Impact, sans-serif;
         }
+        /* 1950年代复古棒球卡微黄卡纸材质底纹 */
+        .vintage-card-border {
+          background-color: #fbf9f1;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), inset 0 0 15px rgba(210, 190, 150, 0.3);
+        }
       `}} />
 
+      {/* 顶部标题栏 */}
       <header className="w-full pt-4 pb-2 px-4 text-center">
         <div className="max-w-md mx-auto space-y-1">
           <p className="tracking-[0.3em] uppercase text-[10px] text-white/80 font-light">
@@ -897,12 +903,26 @@ export default function Home() {
         </div>
       </header>
 
+      {/* 收藏卡风格容器：模拟复古球星卡边框 */}
       <div className="max-w-md sm:max-w-lg mx-auto px-4 pt-2 pb-6 w-full relative">
         <div className="absolute inset-x-4 top-6 bottom-2 bg-stone-300 border-2 border-stone-900 translate-y-3 translate-x-2 pointer-events-none"></div>
         <div className="absolute inset-x-4 top-4 bottom-1 bg-stone-100 border-2 border-stone-900 translate-y-1.5 translate-x-1 pointer-events-none"></div>
 
-        <div className="relative bg-white text-stone-950 overflow-hidden border-2 border-stone-900 rounded-none">
-          <div className="relative w-full h-[300px] flex flex-col items-center justify-center overflow-hidden border-b-2 border-stone-900 px-4">
+        {/* 核心卡片容器：采用复古球星卡米黄底色 */}
+        <div className="relative vintage-card-border text-stone-950 overflow-hidden border-3 border-stone-900 rounded-none">
+          
+          {/* 顶部的复古棒球卡专属铭牌条（Nameplate Bar） */}
+          <div className="bg-stone-900 text-stone-100 px-4 py-2 flex justify-between items-center border-b-2 border-stone-900">
+            <span className="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-amber-400">
+              COLLECTOR EDITION # {selectedArchive.id}
+            </span>
+            <span className="text-[10px] tracking-[0.2em] uppercase font-mono font-bold text-white/80">
+              ARCHIVE SERIES
+            </span>
+          </div>
+
+          {/* 图片展示区 */}
+          <div className="relative w-full h-[280px] flex flex-col items-center justify-center overflow-hidden border-b-2 border-stone-900 px-4">
             <div className="absolute inset-0 z-0 grayscale contrast-150 brightness-90">
               <Image
                 src={currentBg}
@@ -915,19 +935,20 @@ export default function Home() {
             
             <div className="absolute inset-0 z-1 bg-black/25"></div>
 
-            <div className="relative z-10 flex flex-col items-center text-center space-y-3 w-full">
-              <p className="tracking-[0.15em] uppercase text-[10px] sm:text-xs font-bold text-stone-900 bg-white/95 px-3 py-1 border border-stone-900 shadow-sm">
+            <div className="relative z-10 flex flex-col items-center text-center space-y-2 w-full">
+              <p className="tracking-[0.15em] uppercase text-[10px] sm:text-xs font-bold text-stone-900 bg-amber-100/95 px-3 py-1 border border-stone-900 shadow-sm">
                 {selectedArchive.era}
               </p>
               <div className="transform -rotate-1 w-full px-2">
-                <span className="block tracking-tight text-[36px] sm:text-[46px] leading-tight text-[#f47321] vintage-number drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] break-words">
+                <span className="block tracking-tight text-[36px] sm:text-[46px] leading-tight text-amber-500 vintage-number drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] break-words">
                   {selectedArchive.year}
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="p-6 sm:p-8 bg-white text-center">
+          {/* 文本故事与金句区 */}
+          <div className="p-6 sm:p-8 text-center">
             <h3 className="text-xl sm:text-2xl font-serif font-extrabold mb-3 leading-snug text-stone-950 tracking-tight">
               &ldquo;{selectedArchive.headline}&rdquo;
             </h3>
@@ -936,7 +957,8 @@ export default function Home() {
               &ldquo;{selectedArchive.story}&rdquo;
             </p>
 
-            <p className="text-stone-950 text-sm sm:text-base leading-relaxed font-serif font-bold italic mb-7 border-t border-b border-stone-200 py-3 bg-stone-50">
+            {/* 醒目的 Legacy 金句展示框 */}
+            <p className="text-stone-950 text-sm sm:text-base leading-relaxed font-serif font-bold italic mb-7 border-t border-b border-stone-300 py-3 bg-amber-50/60">
               &ldquo;{selectedArchive.legacy}&rdquo;
             </p>
 
@@ -945,12 +967,12 @@ export default function Home() {
                 onClick={handleRandomShuffle}
                 className="w-full bg-[#005030] hover:bg-[#003820] text-white font-serif font-bold tracking-widest text-xs uppercase py-3.5 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
               >
-                NEXT CHAPTER IN THE U
+                DRAW NEXT BASEBALL CHAPTER
               </button>
 
               <button
                 onClick={handleShare}
-                className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 font-serif font-bold tracking-widest text-xs uppercase py-3 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
+                className="w-full bg-stone-200 hover:bg-stone-300 text-stone-900 font-serif font-bold tracking-widest text-xs uppercase py-3 transition-all duration-300 text-center rounded-none border border-black shadow-sm cursor-pointer"
               >
                 {shareButtonText}
               </button>
@@ -959,6 +981,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* 底部版权栏 */}
       <footer className="w-full bg-[#f47321] pt-4 pb-8 px-4 text-center">
         <div className="max-w-md mx-auto space-y-1.5">
           <p className="font-serif italic text-[10px] tracking-widest text-white/90 uppercase font-bold">
